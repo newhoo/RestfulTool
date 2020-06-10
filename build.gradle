@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.10'
+}
+
+group 'io.github.newhoo.restful'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'cn.hutool', name: 'hutool-all', version: '5.3.7'
+}
+
+intellij {
+    version '2018.1.7'
+    pluginName 'RestfulTool'
+    updateSinceUntilBuild false
+    sandboxDirectory = "${rootProject.rootDir}/idea-sandbox"
+}
+patchPluginXml {
+    changeNotes """
+      <li>optimize: remove integer type of swqa</li>
+      <li>new: support export resp_code</li>
+      """
+}
